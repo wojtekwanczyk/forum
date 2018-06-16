@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
-from django.contrib.auth import logout
+from django.contrib.auth.models import User
+
 
 
 from .models import Thread, Post
@@ -12,7 +13,7 @@ from .forms import ThreadForm, PostForm
 
 
 def thread_list(request):
-    threads = Thread.objects.order_by('-created_date')
+    threads = Thread.objects.order_by('-last_modified')
     return render(request, 'forumapp/thread_list.html', {'threads': threads})
 
 
@@ -68,6 +69,7 @@ def post_new(request, pk):
             post.author = request.user
             post.thread = Thread.objects.get(pk=pk)
             post.thread.last_modified = timezone.now()
+            post.thread.save()
             post.created_date = timezone.now()
             post.save()
             return redirect('thread', pk=pk)
@@ -84,3 +86,7 @@ def delete_post(request, pk, th_pk):
 def delete_thread(request, pk):
     Thread.objects.get(pk=pk).delete()
     return redirect('/')
+
+def user(request, pk):
+    user = User.objects.get(pk=pk)
+    return render(request, 'forumapp/user.html', {'user': user})

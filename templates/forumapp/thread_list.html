@@ -45,7 +45,7 @@
 
         <div class="date">
             <p>Author</p>
-            <p>{{ thread.author }}</p>
+            <p><a href={% url 'user' pk=thread.author.pk %}>{{ thread.author }}</a></p>
         </div>
 
         {% if user.is_superuser %}
