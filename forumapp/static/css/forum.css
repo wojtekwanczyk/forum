@@ -1,0 +1,51 @@
+body {
+    background-color: #ffC900;
+}
+
+h1 a {
+    color: brown;
+}
+
+.header {
+    background-color: #ffC900;
+    padding: 25px;
+    text-align: center;
+}
+
+.header2 {
+    background-color: #ffd500;
+    padding: 15px;
+    padding-left: 40px;
+}
+
+.button {
+    float: right;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: Red;
+    border: 5px solid #0F0000;
+    border-radius: 50px;
+}
+
+h2 a {
+    color: brown;
+}
+
+.thread {
+    border: 5px solid brown;
+    border-radius: 30px;
+    background-color: darkorange;
+    color: brown;
+    padding: 5px;
+    padding-left: 40px;
+}
+
+.date {
+    padding-top: 20px;
+    float: right;
+    padding-right: 50px;
+}
+
+

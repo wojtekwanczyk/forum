@@ -1,0 +1,36 @@
+{% extends 'forumapp/base.html' %}
+
+{% block content %}
+
+    <div class="button">
+        <h2> <a href="{% url 'thread_new' %}">New thread</a></h2>
+    </div>
+
+    <div class="header2">
+        <h2>Threads</h2>
+    </div>
+
+
+
+    {% for thread in threads %}
+        <div class="date">
+            <p>Modified</p>
+            <p>{{ thread.last_modified }}</p>
+        </div>
+
+        <div class="date">
+            <p>Created</p>
+            <p>{{ thread.created_date }}</p>
+        </div>
+
+        <div class="date">
+            <p>Author</p>
+            <p>{{ thread.author }}</p>
+        </div>
+
+        <div class="thread">
+            <h2> <a href="{% url 'thread' pk=thread.pk %}">{{ thread.title }}</a></h2>
+        </div>
+    {% endfor %}
+
+{% endblock %}

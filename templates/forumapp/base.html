@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/forum.css' %}">
+</head>
+<body>
+
+<div class="header">
+    <h1><a href="/">Open Forum</a></h1>
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
