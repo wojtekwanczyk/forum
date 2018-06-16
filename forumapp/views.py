@@ -69,7 +69,7 @@ def post_new(request, pk):
             post.thread = Thread.objects.get(pk=pk)
             post.created_date = timezone.now()
             post.save()
-            return redirect('/')
+            return redirect('thread', pk=pk)
     else:
         form = PostForm()
     return render(request, 'forumapp/post_new.html', {'form': form})
