@@ -48,6 +48,12 @@
             <p>{{ thread.author }}</p>
         </div>
 
+        {% if user.is_superuser %}
+            <div class="admbutton">
+                <h4><a href={% url 'delete_thread' pk=thread.pk %}>DELETE THREAD</a></h4>
+            </div>
+        {% endif %}
+
         <div class="thread">
             <h2> <a href="{% url 'thread' pk=thread.pk %}">{{ thread.title }}</a></h2>
         </div>

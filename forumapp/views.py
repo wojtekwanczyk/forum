@@ -80,3 +80,7 @@ def delete_post(request, pk, th_pk):
     Post.objects.get(pk=pk).delete()
     return redirect('thread', pk=th_pk)
 
+
+def delete_thread(request, pk):
+    Thread.objects.get(pk=pk).delete()
+    return redirect('/')
