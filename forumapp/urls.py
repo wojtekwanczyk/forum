@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^thread/(?P<pk>\d+)/post/new/$', views.post_new, name='post_new'),
-
+    url(r'^thread/(?P<th_pk>\d+)/post/delete/(?P<pk>\d+)$', views.delete_post, name='delete_post'),
 ]

@@ -67,9 +67,16 @@ def post_new(request, pk):
             post = form.save(commit=False)
             post.author = request.user
             post.thread = Thread.objects.get(pk=pk)
+            post.thread.last_modified = timezone.now()
             post.created_date = timezone.now()
             post.save()
             return redirect('thread', pk=pk)
     else:
         form = PostForm()
     return render(request, 'forumapp/post_new.html', {'form': form})
+
+
+def delete_post(request, pk, th_pk):
+    Post.objects.get(pk=pk).delete()
+    return redirect('thread', pk=th_pk)
+

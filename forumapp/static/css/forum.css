@@ -24,9 +24,15 @@ h1 a {
     padding-right: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: Red;
+    background: #ffa10a;
     border: 5px solid #0F0000;
     border-radius: 50px;
+}
+
+.admbutton {
+    float: right;
+    padding-right: 25px;
+    padding-top: 25px;
 }
 
 h2 a {
