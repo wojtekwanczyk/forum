@@ -22,4 +22,8 @@
         </div>
     {% endfor %}
 
+    <div class="button">
+        <h2><a href="{% url 'post_new' pk=thread.pk %}">Respond</a></h2>
+    </div>
+
 {% endblock %}
