@@ -15,4 +15,6 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/thread/delete/$', views.delete_thread, name='delete_thread'),
     url(r'^user/(?P<pk>\d+)/$', views.user, name='user'),
     url(r'^user/edit/(?P<pk>\d+)/$', views.user_edit, name='user_edit'),
+    url(r'^user/(?P<pk>\d+)/send/$', views.send_message, name='send_message'),
+
 ]

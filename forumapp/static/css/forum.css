@@ -14,7 +14,7 @@ h1 a {
 
 .header2 {
     background-color: #ffd500;
-    padding: 15px;
+    padding: 13px;
     padding-left: 40px;
 }
 
@@ -55,6 +55,10 @@ h1 a {
 }
 
 h2 a {
+    color: brown;
+}
+
+h3 a {
     color: brown;
 }
 

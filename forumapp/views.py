@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 from .models import Thread, Post, Message
-from .forms import ThreadForm, PostForm, UserForm
+from .forms import ThreadForm, PostForm, UserForm, MessageForm
 
 # Create your views here.
 
@@ -105,3 +105,17 @@ def user_edit(request, pk):
     else:
         form = UserForm(instance=user)
     return render(request, 'forumapp/user_edit.html', {'form': form})
+
+
+def send_message(request, pk):
+    if request.method == "POST":
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            ms = form.save(commit=False)
+            ms.from_user = request.user
+            ms.created_date = timezone.now()
+            ms.save()
+            return redirect('thread_list')
+    else:
+        form = MessageForm()
+    return render(request, 'forumapp/send_message.html', {'form': form})

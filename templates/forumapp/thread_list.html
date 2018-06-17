@@ -5,23 +5,28 @@
 
     {% if user.is_authenticated %}
         <div class="button">
-            <h2> <a href="{% url 'logout' %}">Log out</a></h2>
+            <h3> <a href="{% url 'logout' %}">Log out</a></h3>
         </div>
 
         <div class="button">
-            <h2> <a href="{% url 'thread_new' %}">New thread</a></h2>
+            <h3> <a href="{% url 'thread_new' %}">New thread</a></h3>
         </div>
 
         <div class="button">
-            <h2>Logged in as <a href={% url 'user' pk=request.user.pk %}>{{ request.user.username }}</a></h2>
+            <h3>Logged in as <a href={% url 'user' pk=request.user.pk %}>{{ request.user.username }}</a></h3>
         </div>
+
+        <div class="button">
+            <h3><a href={% url 'send_message' pk=request.user.pk %}>Send message</a></h3>
+        </div>
+
     {% else %}
         <div class="button">
-            <h2> <a href="{% url 'signup' %}">Sign up</a></h2>
+            <h3> <a href="{% url 'signup' %}">Sign up</a></h3>
         </div>
 
         <div class="button">
-            <h2> <a href="{% url 'login' %}">Login</a></h2>
+            <h3> <a href="{% url 'login' %}">Login</a></h3>
         </div>
     {% endif %}
 
