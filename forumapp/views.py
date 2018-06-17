@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 
 
 
-from .models import Thread, Post
-from .forms import ThreadForm, PostForm
+from .models import Thread, Post, Message
+from .forms import ThreadForm, PostForm, UserForm
 
 # Create your views here.
 
@@ -87,6 +87,21 @@ def delete_thread(request, pk):
     Thread.objects.get(pk=pk).delete()
     return redirect('/')
 
+
 def user(request, pk):
-    user = User.objects.get(pk=pk)
-    return render(request, 'forumapp/user.html', {'user': user})
+    user1 = User.objects.get(pk=pk)
+    messages = Message.objects.filter(to_user=user1)
+    return render(request, 'forumapp/user.html', {'user1': user1, 'messages': messages})
+
+
+def user_edit(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    if request.method == "POST":
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.save()
+            return redirect('user', pk=pk)
+    else:
+        form = UserForm(instance=user)
+    return render(request, 'forumapp/user_edit.html', {'form': form})

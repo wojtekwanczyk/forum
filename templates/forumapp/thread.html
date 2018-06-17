@@ -14,7 +14,7 @@
 
             <div class="date">
                 <p>Author</p>
-                <p>{{ post.author }}</p>
+                <p><a href="{% url 'user' pk=post.author.pk %}">{{ post.author }}</a></p>
             </div>
 
             {% if user.is_superuser %}

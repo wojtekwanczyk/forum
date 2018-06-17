@@ -16,6 +16,12 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('text',)
 
+class UserForm(forms.ModelForm):
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')

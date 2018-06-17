@@ -16,3 +16,10 @@ class Thread(models.Model):
     title = models.CharField(max_length=30)
     created_date = models.DateTimeField(default=timezone.now)
     last_modified = models.DateTimeField(default=timezone.now)
+
+
+class Message(models.Model):
+    from_user = models.ForeignKey('auth.User',related_name='%(class)s_requests_created', on_delete=models.CASCADE)
+    to_user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)

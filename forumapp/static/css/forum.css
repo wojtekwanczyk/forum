@@ -29,10 +29,29 @@ h1 a {
     border-radius: 50px;
 }
 
+.button2 {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #ffa10a;
+    border: 5px solid #0F0000;
+    border-radius: 50px;
+}
+
 .admbutton {
     float: right;
     padding-right: 25px;
     padding-top: 25px;
+}
+
+.usredit {
+    float: right;
+    padding-right: 25px;
+    padding-top: 25px;
+    border: 5px solid brown;
+    color: black;
 }
 
 h2 a {

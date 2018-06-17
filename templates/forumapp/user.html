@@ -1,10 +1,58 @@
+
 {% extends 'forumapp/base.html' %}
+
+{% load staticfiles %}
 
 {% block content %}
 
+    {% if user1.pk == request.user.pk or request.user.is_superuser %}
+        <div class="button2">
+            <h3><a href="{% url 'user_edit' pk=user1.pk %}">EDIT USER</a></h3>
+        </div>
+    {% endif %}
+
+
     <div>
-        <h2>{{ user.username }}</h2>
+        <h2>Username: {{ user1.username }}</h2>
     </div>
+
+    <div>
+        <h2>First name: {{ user1.first_name }}</h2>
+    </div>
+
+    <div>
+        <h2>Last name: {{ user1.last_name}}</h2>
+    </div>
+
+    <div>
+        <h2>Joined: {{ user1.date_joined}}</h2>
+    </div>
+
+    <div>
+        <h2>Last login: {{ user1.last_login}}</h2>
+    </div>
+
+    <div>
+        <h2>Email: {{ user1.email}}</h2>
+    </div>
+
+
+    <div><h1>-----------------------</h1></div>
+
+    {% if user1.pk == request.user.pk or request.user.is_superuser %}
+        <div>
+            <h1>Messages:</h1>
+        </div>
+
+        {% for m in messages %}
+            <div class="thread">
+                <h4>{{ m.text }}</h4>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+
+
 
 
 {% endblock %}

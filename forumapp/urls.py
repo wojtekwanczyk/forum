@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^thread/(?P<th_pk>\d+)/post/delete/(?P<pk>\d+)$', views.delete_post, name='delete_post'),
     url(r'^(?P<pk>\d+)/thread/delete/$', views.delete_thread, name='delete_thread'),
     url(r'^user/(?P<pk>\d+)/$', views.user, name='user'),
-
+    url(r'^user/edit/(?P<pk>\d+)/$', views.user_edit, name='user_edit'),
 ]
