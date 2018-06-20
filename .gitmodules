@@ -1,0 +1,3 @@
+[submodule "wwanczyk"]
+	path = wwanczyk
+	url = https://wwanczyk@bitbucket.iisg.agh.edu.pl/scm/py18/wwanczyk.git
