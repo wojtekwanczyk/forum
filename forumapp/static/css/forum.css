@@ -22,7 +22,7 @@ h1 a {
     float: right;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 10px;
+    padding-top: 12px;
     padding-bottom: 10px;
     background: #ffa10a;
     border: 5px solid #0F0000;
@@ -75,6 +75,13 @@ h3 a {
     padding-top: 20px;
     float: right;
     padding-right: 50px;
+}
+
+.from {
+    float: right;
+    padding: 12px;
+    padding-right: 50px;
+    color: brown;
 }
 
 

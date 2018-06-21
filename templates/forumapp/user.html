@@ -45,9 +45,15 @@
         </div>
 
         {% for m in messages %}
+
+            <div class="from">
+                <h4>From: <a href={% url 'user' pk=m.from_user.pk %}>{{ m.from_user }}</a></h4>
+            </div>
+
             <div class="thread">
                 <h4>{{ m.text }}</h4>
             </div>
+
 
         {% endfor %}
     {% endif %}
